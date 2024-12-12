@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Atualizar Filme</title>
+        <link id="tema" rel="stylesheet" href="/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/js/atualizar-filme.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="listar-filmes.html">Voltar para Lista de Filmes</a>
+            </nav>
+            <h1>Atualizar Filme</h1>
+        </header>
+        <form id="form-atualizar-filme">
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo">
+            </div>
+            <div>
+                <label for="sinopse">Sinopse:</label>
+                <input type="text" id="sinopse" name="sinopse">
+            </div>
+            <div>
+                <label for="genero">Gênero:</label>
+                <input type="text" id="genero" name="genero">
+            </div>
+            <div>
+                <label for="anoLancamento">Ano de Lançamento:</label>
+                <input type="number" id="anoLancamento" name="anoLancamento">
+            </div>
+            <button type="submit">Atualizar Filme</button>
+        </form>
+    </body>
+</html>

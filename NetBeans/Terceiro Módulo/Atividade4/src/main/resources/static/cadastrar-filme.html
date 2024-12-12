@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastrar Filme</title>
+        <link id="tema" rel="stylesheet" href="/css/style-claro.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/js/trocar-tema.js"></script>
+        <script src="/js/cadastrar-filme.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="listar-filmes.html">Voltar para Lista de Filmes</a>
+                <button id="botao-troca-tema">Alternar Tema</button>
+            </nav>
+            <h1>Cadastrar Novo Filme</h1>
+        </header>
+        <form id="form-cadastro-filme">
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo">
+            </div>
+            <div>
+                <label for="sinopse">Sinopse:</label>
+                <input type="text" id="sinopse" name="sinopse">
+            </div>
+            <div>
+                <label for="genero">Gênero:</label>
+                <input type="text" id="genero" name="genero">
+            </div>
+            <div>
+                <label for="anoLancamento">Ano de Lançamento:</label>
+                <input type="number" id="anoLancamento" name="anoLancamento">
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </body>
+</html>

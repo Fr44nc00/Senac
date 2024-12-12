@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Atualizar Análise</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+    </head>
+    <body>
+        <header th:insert="~{navegacao.html}"></header>
+        <h1>Atualizar Análise</h1>
+        <form th:action="@{/filmes/{id}/analises/{analiseId}/atualizar(id=${filme.id}, analiseId=${analise.id})}" method="post">
+            <div>
+                <p>Análise: <input type="text" th:field="${analise.detalhes}" /></p>
+                <p>Nota do filme (entre 0.0 e 10.0): <input type="text" th:field="${analise.nota}" /></p>
+            </div>
+            <button type="submit">Atualizar</button>
+        </form>
+        <a th:href="@{/filmes/{id}(id=${filme.id})}">Voltar</a>
+    </body>
+</html>

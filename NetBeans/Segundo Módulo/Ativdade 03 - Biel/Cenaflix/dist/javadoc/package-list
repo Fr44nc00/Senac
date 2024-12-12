@@ -1,0 +1,5 @@
+cenaflix.database
+cenaflix.gui
+cenaflix.model
+cenaflix.persistencia
+javax.swing

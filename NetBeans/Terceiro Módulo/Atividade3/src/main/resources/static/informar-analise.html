@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adicionar Análise</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/js/informar-analise.js" defer></script>
+        <script src="/js/atualizar-link-retorno.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a id="voltar-detalhes" href="#">Voltar para Detalhes do Filme</a>
+            </nav>
+            <h1>Adicionar Análise</h1>
+        </header>
+        <form id="form-analise">
+            <label for="nota">Nota (0-10):</label>
+            <input type="number" id="nota" name="nota" min="0" max="10" required>
+
+            <label for="detalhes">Detalhes da Análise:</label>
+            <textarea id="detalhes" name="detalhes" required></textarea>
+
+            <button type="submit">Salvar Análise</button>
+        </form>
+    </body>
+</html>

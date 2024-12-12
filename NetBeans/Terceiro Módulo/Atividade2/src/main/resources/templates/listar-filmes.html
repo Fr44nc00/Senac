@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Catálogo</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+    </head>
+    <body>
+        <header th:insert="~{navegacao.html}"></header> 
+        <table> 
+            <thead> 
+                <tr> 
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Gênero</th>
+                    <th>Ano de Lançamento</th>
+                </tr> 
+            </thead> 
+            <tbody> 
+                <tr th:each="filme : ${filmes}">
+                    <td><a th:href="@{/filmes/{id}(id=${filme.id})}" th:text="${filme.id}"></a></td>
+                    <td><a th:href="@{/filmes/{id}(id=${filme.id})}" th:text="${filme.titulo}"></a></td>
+                    <td><a th:href="@{/filmes/{id}(id=${filme.id})}" th:text="${filme.genero}"></a></td>
+                    <td><a th:href="@{/filmes/{id}(id=${filme.id})}" th:text="${filme.anoLancamento}"></a></td>
+                </tr>
+            </tbody> 
+        </table>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <persistence xmlns="https://jakarta.ee/xml/ns/persistence" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      version="3.0" 
+      xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+      <persistence-unit name="Financas-PU">
+        <properties>
+          <property name="jakarta.persistence.jdbc.driver"
+                    value="com.mysql.cj.jdbc.Driver" />
+          <!-- Indica qual classe de driver para a conexão será utilizada pelo Hibernate.
+          Como você está usando a biblioteca Connector J do MySQL, o valor será
+          com.mysql.cj.jdbc.Driver por padrão. -->
+          <property name="jakarta.persistence.jdbc.url"
+                    value="jdbc:mysql://localhost/financas" />
+          <!-- Representa o caminho para o banco de dados que será usado. Neste exemplo,
+          o valor é jdbc:mysql://localhost/financas, indicando que se utilizou o MySQL,
+          que o banco de dados está na própria máquina em que o programa roda (localhost)
+          e que o banco se chama financas. -->
+          <property name="jakarta.persistence.jdbc.user" value="root" />
+          <property name="jakarta.persistence.jdbc.password" value="simone04" />
+          <!-- Armazenam, respectivamente, os valores para usuário (root, neste exemplo)
+          e senha (“simone04”, neste exemplo) para conexão com o banco de dados. Troque
+          para o usuário e a senha usados no seu banco de dados. A tag de password pode
+          ser excluída se o banco não usar senha. -->
+          <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+          <!-- Define o “dialeto” do hibernate com o banco de dados. O valor
+          org.hibernate.dialect.MySQL8Dialect define que esse dialeto (usado para o ORM
+          montar internamente as consultas SQL) obedece à definição do MySQL. -->
+          <property name="hibernate.show_sql" value="true" />
+          <property name="hibernate.format_sql" value="true" />
+        </properties>
+      </persistence-unit>
+    </persistence>
+
+<!--
+A tag <persistence-unit> define a unidade de persistência do projeto e nela define-se
+a conexão com o banco de dados. Neste projeto, você nomeará sua unidade de persistência
+de Financas-PU.
+
+Se você conectar em um banco de dados que está em um servidor remoto, você pode substituir
+o localhost pelo endereço de IP do servidor ou pelo nome de domínio, simulando um servidor
+de banco de dados na mesma rede do servidor de aplicação.
+
+Assim, o resultado seria algo semelhante a isto:
+    
+    <property name="jakarta.persistence.jdbc.url"
+    value="jdbc:mysql://192.168.0.123/financasjpa" />
+        
+Se o servidor de banco de dados on-line for diferente do servidor de aplicação, o
+endereço do servidor deve vir acompanhado pela porta que o MySQL está usando,
+o que ficaria semelhante a isto.
+
+    <property name="jakarta.persistence.jdbc.url"
+    value="jdbc:mysql://meuservidormysql.com.br:3306/financasjpa" />
+        
+Você pode usar esse modelo de XML para seus próximos projetos alterando apenas o nome
+do banco de dados na tag de propriedade jakarta.persistence.jdbc.url e, possivelmente,
+o usuário e a senha do banco de dados.
+
+Caso você tenha algum problema com a configuração do arquivo, é possível que seu projeto
+precise que a pasta META-INF fique diretamente na pasta src. Então, basta mover a pasta
+META-INF e seu conteúdo, e isso deve resolver.
+-->

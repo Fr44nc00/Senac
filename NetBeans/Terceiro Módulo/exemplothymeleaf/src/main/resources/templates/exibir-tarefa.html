@@ -1,0 +1,16 @@
+<!DOCTYPE html> 
+<html xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+<head> 
+    <title>Tarefa</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+</head>
+<body>
+   <header th:insert="navbar.html"></header>
+    <h1>Tarefa</h1> 
+    <p>Bem-vindo, <span th:text="${nome}"/>!</p> 
+    <br> 
+    <p>ID: <span th:text="${tarefa.id}" /></p> 
+    <p>Descrição: <span th:text="${tarefa.descricao}" /></p> 
+    <p>Completa: <span th:text="${tarefa.completa}" /></p> 
+</body> 
+</html>

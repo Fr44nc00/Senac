@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+    <head> 
+        <title>Lista de tarefas</title> 
+        <!-- CSS do Bootstrap --> 
+        <link rel="stylesheet" th:href="@{/bootstrap-5.3.3-dist/css/bootstrap.min.css}"> 
+        <!-- CSS próprio--> 
+        <link rel="stylesheet" th:href="@{/css/style.css}" />  
+    </head> 
+    <body> 
+        <header th:insert="navbar.html"></header> 
+        <h1>Lista de tarefas</h1> 
+        <img th:src="@{/images/tarefa-icone.png}" height="50px"> 
+        <p>Essas são todas as suas tarefas:</p> 
+        <table> 
+            <thead> 
+                <tr> 
+                    <th>ID</th> 
+                    <th>Nome</th> 
+                    <th>Completa</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                <tr th:each="tarefa : ${tarefas}"> 
+                    <td th:text="${tarefa.id}"></td> 
+                    <td th:text="${tarefa.descricao}"></td> 
+                    <td onclick="atualizarTarefa(this)"> 
+                    <!-- Usamos if para verificar se o valor é verdadeiro -->
+                    <span th:if="${tarefa.completa}" class="tarefa-concluida">
+                        Concluída</span>
+                    <!-- Usamos unless para verificar se o valor é falso --> 
+                    <span th:unless="${tarefa.completa}" class="tarefa-pendente">
+                        Pendente</span> 
+                    </td>                 
+                </tr> 
+            </tbody> 
+        </table>
+        <script th:src="@{/bootstrap-5.3.3-dist/js/bootstrap.min.js}"></script> 
+        <script th:src="@{/js/script.js}"></script> 
+    </body>
+</html>

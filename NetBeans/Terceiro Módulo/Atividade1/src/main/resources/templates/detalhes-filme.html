@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Detalhes do Filme</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+    </head>
+    <body>
+        <header th:insert="~{navegacao.html}"></header>
+        <h1><span th:text="${filme.titulo}"></span></h1>
+        <p>Sinopse: <span th:text="${filme.sinopse}"></span></p>
+        <p>Gênero: <span th:text="${filme.genero}"></span></p>
+        <p>Ano de lançamento: <span th:text="${filme.anoLancamento}"></span></p>
+        
+        <nav>
+            <a th:href="@{/filmes/{id}/analises(id=${filme.id})}">
+                Ver análises
+            </a>
+            <a th:href="@{/filmes/{id}/informar-analise(id=${filme.id})}">
+                Criar nova análise
+            </a>
+        </nav>
+
+        <h2>Análises</h2>
+        <ul>
+            <li th:each="analise : ${analises}">
+                <p><span th:text="${analise.detalhes}"></span></p>
+                <p><span th:text="${analise.nota}"></span></p>
+            </li>
+        </ul>
+    </body>
+</html>

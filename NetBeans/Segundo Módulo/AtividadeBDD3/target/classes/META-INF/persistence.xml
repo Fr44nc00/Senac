@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="3.0"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+    <persistence-unit name="Cenaflix-PU">
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <!-- Indica qual classe de driver para a conexão será utilizada pelo Hibernate.
+            Como está usada a biblioteca Connector J do MySQL, o valor será
+            com.mysql.cj.jdbc.Driver por padrão. -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost/cenaflix2"/>
+            <!-- Representa o caminho para o banco de dados que será usado. Aqui,
+            o valor é jdbc:mysql://localhost/cenaflix2, indicando que se utilizou o MySQL,
+            que o banco de dados está na própria máquina em que o programa roda (localhost)
+            e que o banco se chama cenaflix2. -->
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="simone04"/>
+            <!-- Armazenam, respectivamente, os valores para usuário e senha para conexão com
+            o banco de dados.-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <!-- Define o “dialeto” do hibernate com o banco de dados. O valor
+            org.hibernate.dialect.MySQL8Dialect define que esse dialeto (usado para o ORM
+            montar internamente as consultas SQL) obedece à definição do MySQL. -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
